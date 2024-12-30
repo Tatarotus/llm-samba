@@ -1,0 +1,27 @@
+[project]
+name = "llm-samba"
+version = "0.1"
+description = "LLM plugin providing access to the free Samba models using the samba API"
+readme = "README.md"
+authors = [{name = "Samuel Dantas"}]
+license = {text = "Apache-2.0"}
+classifiers = [
+    "License :: OSI Approved :: Apache Software License"
+]
+dependencies = [
+    "llm>=0.17",
+    "httpx",
+    "httpx-sse",
+]
+
+[project.urls]
+Homepage = "https://github.com/hiepler/llm-grok"
+Changelog = "https://github.com/hiepler/llm-grok/releases"
+Issues = "https://github.com/hiepler/llm-grok/issues"
+CI = "https://github.com/hiepler/llm-grok/actions"
+
+[project.entry-points.llm]
+samba = "llm_samba"
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-httpx"]
