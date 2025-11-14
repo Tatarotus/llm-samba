@@ -6,15 +6,13 @@ from pydantic import Field
 from typing import Optional
 
 DEFAULT_MODEL = "Meta-Llama-3.3-70B-Instruct"
-MODEL_1 = "Meta-Llama-3.1-405B-Instruct"
-MODEL_2 = "Meta-Llama-3.1-8B-Instruct"
-MODEL_3 = "Meta-Llama-3.2-1B-Instruct"
-MODEL_4 = "Meta-Llama-3.2-3B-Instruct"
-MODEL_5 = "Meta-Llama-3.3-70B-Instruct"
-MODEL_6 = "Meta-Llama-Guard-3-8B"
-MODEL_7 = "Qwen2.5-72B-Instruct"
-MODEL_8 = "Qwen2.5-Coder-32B-Instruct"
-MODEL_9 = "QwQ-32B-Preview"
+MODEL_1 = "gpt-oss-120b"
+MODEL_2 = "DeepSeek-V3.1-Terminus"
+MODEL_3 = "Meta-Llama-3.3-70B-Instruct"
+MODEL_4 = "Meta-Llama-Guard-3-8B"
+MODEL_5 = "Qwen2.5-72B-Instruct"
+MODEL_6 = "Qwen2.5-Coder-32B-Instruct"
+MODEL_7 = "QwQ-32B-Preview"
 
 
 @llm.hookimpl
@@ -27,8 +25,6 @@ def register_models(register):
     register(Samba(MODEL_5))
     register(Samba(MODEL_6))
     register(Samba(MODEL_7))
-    register(Samba(MODEL_8))
-    register(Samba(MODEL_9))
 
 class Samba(llm.Model):
     can_stream = True
@@ -176,5 +172,3 @@ def register_commands(cli):
         click.echo(f"Available models: {MODEL_5}")
         click.echo(f"Available models: {MODEL_6}")
         click.echo(f"Available models: {MODEL_7}")
-        click.echo(f"Available models: {MODEL_8}")
-        click.echo(f"Available models: {MODEL_9}")
